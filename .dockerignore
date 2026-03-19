@@ -1,0 +1,7 @@
+__pycache__
+*.pyc
+.env
+downloads/
+ffmpeg.exe
+ffprobe.exe
+ffplay.exe
