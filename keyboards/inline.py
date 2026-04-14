@@ -14,16 +14,13 @@ def get_quality_buttons(formats):
     """Второй шаг: если выбрано видео, показываем доступные разрешения"""
     builder = InlineKeyboardBuilder()
     
-    # formats приходит из нашего downloader.py
     for f in formats:
         res = f['resolution']
         f_id = f['format_id']
-        # Сохраняем format_id в callback_data, чтобы потом знать, что скачивать
         builder.add(types.InlineKeyboardButton(
             text=res, 
             callback_data=f"quality_{f_id}"
         ))
     
-    builder.adjust(2) # Кнопки в 2 колонки
+    builder.adjust(2) 
     return builder.as_markup()
-    
